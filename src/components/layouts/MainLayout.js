@@ -8,10 +8,10 @@ import Footer from '../footer/Footer';
 const MainLayout = ({children}) => {
     return (
         <>
-            <header className='heaser__main'>
+            <header className='header__main'>
                 <HeaderLogo />
                 <HeaderMenu />
-                <HeaderToolbar />
+                {/* <HeaderToolbar /> */}
             </header>
             <main>
                 {children}
