@@ -9,9 +9,11 @@ const MainLayout = ({children}) => {
     return (
         <>
             <header className='header__main'>
-                <HeaderLogo />
+                <div className='header__top'>
+                    <HeaderLogo />
+                    <HeaderToolbar />
+                </div>
                 <HeaderMenu />
-                {/* <HeaderToolbar /> */}
             </header>
             <main>
                 {children}

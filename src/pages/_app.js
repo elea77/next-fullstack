@@ -1,5 +1,5 @@
 import MainLayout from '../components/layouts/MainLayout';
-import '../styles/globals.css';
+import '../styles/styles.scss';
 import {ApolloProvider} from "@apollo/client";
 import client from "../apollo/apollo-client";
 

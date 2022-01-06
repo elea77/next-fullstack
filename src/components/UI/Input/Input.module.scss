@@ -5,8 +5,12 @@
         min-width: 240px;
         height: 44px;
         line-height: 42px;
-        padding: 0 24px;
+        padding: 0 14px;
         font-size: 16px;
         margin-bottom: 1em;
+        &:focus, &:hover {
+            outline: none;
+            border-color: black;
+        }
     }
 }

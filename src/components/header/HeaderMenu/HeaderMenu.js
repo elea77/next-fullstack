@@ -4,7 +4,7 @@ import styles from "./HeaderMenu.module.scss";
 
 const HeaderMenu = () => {
     return (
-        <div className={styles.header__menu}>
+        <nav className={styles.header__menu}>
             <ul>
                 <li>
                     <Link href="/">
@@ -27,7 +27,7 @@ const HeaderMenu = () => {
                     </Link>
                 </li>
             </ul>
-        </div>
+        </nav>
     );
 };
 

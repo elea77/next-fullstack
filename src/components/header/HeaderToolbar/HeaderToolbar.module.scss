@@ -1,3 +1,15 @@
 .header__toolbar {
-    
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    ul {
+        margin: 0;
+        display: flex;
+        li {
+            list-style: none;
+        }
+    }
 }

@@ -4,7 +4,7 @@ import styles from "./Button.module.scss";
 const Button = (props) => {
     return (
         <div className={styles.primary__button}>
-            <button>{props.text}</button>
+            <button className={props.className}>{props.text}</button>
         </div>
     );
 };
