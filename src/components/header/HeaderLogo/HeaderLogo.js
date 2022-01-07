@@ -7,7 +7,7 @@ const HeaderLogo = () => {
     return (
         <div className={styles.header__logo}>
             <Link href="/">
-                <a><img src={LogoImg.src} alt="Shein"/></a>
+                <a><img src={LogoImg.src} alt="Shein" /></a>
             </Link>
         </div>
     );

@@ -8,8 +8,8 @@ import Footer from '../footer/Footer';
 const MainLayout = ({children}) => {
     return (
         <>
-            <header className='header__main container'>
-                <div className='header__top'>
+            <header className='header__main'>
+                <div className='header__top container'>
                     <HeaderLogo />
                     <HeaderToolbar />
                 </div>
@@ -19,7 +19,7 @@ const MainLayout = ({children}) => {
                 {children}
             </main>
             <footer>
-                <Footer/>
+                <Footer />
             </footer>
         </>
     );

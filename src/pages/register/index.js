@@ -1,36 +1,48 @@
 import React, {useState} from 'react';
+import { useRouter } from "next/router";
+import authService from "../../services/auth.service";
 import TitlePage from '../../components/UI/Title/TitlePage';
 import Input from '../../components/UI/Input/Input';
 import Label from '../../components/UI/Label/Label';
 import Button from '../../components/UI/Button/Button';
 import Link from 'next/link';
 import styles from "./index.module.scss";
+import Alert from '../../components/UI/Alert/Alert';
 
 
 const Index = () => {
 
     const [user, setUser] = useState({});
+    const router = useRouter();
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(user);
-
-        fetch("http://localhost:3131/api/v1/users", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(user)
+        authService.register(user)
+        .then((data) => {
+            console.log(data);
+            if (data.message) {
+            setError(true);
+            setErrorMessage(data.message);
+            return false;
+            }
+            localStorage.setItem("token", data.token);
+            router.push("/profile");
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
-    }
+        .catch((err) => {
+            console.log(err);
+            setError(true);
+            setErrorMessage(err.message)
+        });
+    };
 
     return (
         <div className='container'>
             <TitlePage title="Inscription" className='text-center'></TitlePage>
             <form className={styles.register__form} onSubmit={(e) => handleSubmit(e)}>
+
+                {error ? <Alert text={errorMessage} className='alert alert-danger'></Alert> : ""}
 
                 <Label text="Prénom"></Label>
                 <Input type="text" name="firstName" required="required" onChange={(e) => { setUser({ ...user, firstName: e.target.value }) }}></Input>
@@ -49,6 +61,10 @@ const Index = () => {
 
                 <Input type="submit" value="S'INSCRIRE" className="btn btn-black"></Input>
             </form>
+
+            <div className='text-center'>
+                <Link href="/login"><a>Déjà un compte ? Se connecter</a></Link>
+            </div>
         </div>
     );
 };

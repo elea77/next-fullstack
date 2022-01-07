@@ -10,6 +10,7 @@ const Index = () => {
 
     const [error, setError] = useState(false);
     const [message, setMessage] = useState(false);
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
