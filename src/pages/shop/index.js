@@ -17,7 +17,7 @@ const Index = () => {
 
     console.log(data);
     return (
-        <div className="shop__grid">
+        <div className="shop__grid container">
             {
                 data.getProducts.map((product) => (
                     <div className="product__card" key={product._id}>

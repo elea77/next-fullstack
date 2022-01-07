@@ -3,7 +3,7 @@ import TitlePage from '../../components/UI/Title/TitlePage';
 
 const Index = () => {
     return (
-        <div>
+        <div className='container'>
             <TitlePage title="About Page"></TitlePage>
         </div>
     );

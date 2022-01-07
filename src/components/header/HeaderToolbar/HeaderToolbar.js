@@ -10,12 +10,12 @@ const HeaderToolbar = () => {
             <ul>
                 <li>
                     <Link href="/login">
-                        <a><FaUser /></a>
+                        <a><FaUser font-size="22px" /></a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/cart">
-                        <a><BsFillBasket2Fill /></a>
+                        <a><BsFillBasket2Fill font-size="22px" /></a>
                     </Link>
                 </li>
                 <li></li>

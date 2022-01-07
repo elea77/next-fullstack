@@ -3,7 +3,7 @@ import TitlePage from '../../components/UI/Title/TitlePage';
 
 const Cart = () => {
     return (
-        <div>
+        <div className='container'>
             <TitlePage title="Panier"></TitlePage>
         </div>
     );
