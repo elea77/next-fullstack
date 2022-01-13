@@ -4,6 +4,7 @@ import Input from '../../components/UI/Input/Input';
 import Alert from '../../components/UI/Alert/Alert';
 import Link from 'next/link';
 import Router from "next/router";
+import apiConfigs from "../../../next.config.js";
 
 const Index = () => {
     const [user, setUser] = useState({});
@@ -16,7 +17,7 @@ const Index = () => {
         e.preventDefault();
         console.log(user);
 
-        fetch("http://localhost:3131/api/v1/login", {
+        fetch(`${apiConfigs.env.API_URL}/api/v1/login`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
