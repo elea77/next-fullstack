@@ -10,6 +10,8 @@ const Index = () => {
     const router = useRouter()
     const { pid } = router.query
 
+    console.log(data);
+
     if (loading) {
         return "loading...";
     }
@@ -19,13 +21,14 @@ const Index = () => {
         return null;
     }
 
+
     return (
         <div className='container'>
             <div className={styles.shop__grid}>
                 {
                     data.getProducts.map((product) => (
                         <div className={styles.product__card} key={product.id}>
-                            <Link href="">
+                            <Link href={`/product/${product.id}`}>
                                 <a>
                                     { product.img ? <img src={product.img} alt={product.title} className={styles.product__img} /> : <img src="https://fakeimg.pl/300x400/" alt={product.title} className={styles.product__img} /> }
                                     <h2 className={styles.product__title}>{product.title}</h2>

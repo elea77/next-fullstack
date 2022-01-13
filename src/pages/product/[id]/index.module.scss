@@ -1,0 +1,13 @@
+.product {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    .product__img {
+        padding: 0 1em;
+        img {
+            max-width: 100%;
+        }
+    }
+    .product__info {
+        padding: 0 1em;
+    }
+}

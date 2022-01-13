@@ -17,53 +17,20 @@ const Index = () => {
         e.preventDefault();
         authService.login(user)
         .then((data) => {
-            // console.log(data);
             if (data.message) {
-            setError(true);
-            setErrorMessage(data.message);
-            return false;
+                setError(true);
+                setErrorMessage(data.message);
+                return false;
             }
             localStorage.setItem("token", data.token);
             router.push("/profile");
         })
         .catch((err) => {
-            // console.log(err);
             setError(true);
             setErrorMessage(err.message)
         });
     };
-
-    // const [user, setUser] = useState({});
-
-    // const [error, setError] = useState(false);
-    // const [message, setMessage] = useState(false);
     
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     // console.log(user);
-
-    //     fetch(`${apiConfigs.env.API_URL}/api/v1/login`, {
-    //         method: "POST",
-    //         headers: {
-    //             "content-type": "application/json"
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         // console.log(data);
-    //         if(data.auth == false) {
-    //             setError(true);
-    //             setMessage(data.message);
-    //         } else {
-    //             localStorage.setItem("token", data.token);
-    //             Router.push('/profile');
-    //         }
-    //     })
-    //     .catch(err => console.log(err))
-    // }
-
     return (
         <div className='container'>
             <TitlePage title="Login" className='text-center'></TitlePage>
