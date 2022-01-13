@@ -21,7 +21,7 @@ const Index = () => {
         e.preventDefault();
         authService.register(user)
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.message) {
             setError(true);
             setErrorMessage(data.message);
@@ -31,7 +31,7 @@ const Index = () => {
             router.push("/profile");
         })
         .catch((err) => {
-            console.log(err);
+            // console.log(err);
             setError(true);
             setErrorMessage(err.message)
         });

@@ -7,11 +7,11 @@ const Index = () => {
     const [user, setUser] = useState();
 
     useEffect(() => {
-        console.log(localStorage.getItem('token'));
+        // console.log(localStorage.getItem('token'));
         const token = localStorage.getItem('token');
         authService.getUser(token)
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setUser(data.user);
             })
             .catch(err => console.log(err));
