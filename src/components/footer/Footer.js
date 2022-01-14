@@ -17,14 +17,14 @@ const Footer = () => {
                 </div>
                 <div className={styles.footer__second}>
                     <h2>Suivez nous</h2>
-                    <Link href="">
-                        <a><BsTwitter fontSize="2em" /></a>
+                    <Link href="https://twitter.com/SheIn_official">
+                        <a target="_blank"><BsTwitter fontSize="2em" /></a>
                     </Link>
-                    <Link href="">
-                        <a><FaFacebookF fontSize="2em" /></a>
+                    <Link href="https://www.facebook.com/SHEINFrance/">
+                        <a target="_blank"><FaFacebookF fontSize="2em" /></a>
                     </Link>
-                    <Link href="">
-                        <a><GrInstagram fontSize="2em" /></a>
+                    <Link href="https://www.instagram.com/sheinfrance_/">
+                        <a target="_blank"><GrInstagram fontSize="2em" /></a>
                     </Link>
                 </div>
             </div>

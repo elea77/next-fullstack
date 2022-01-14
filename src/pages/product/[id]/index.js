@@ -14,6 +14,9 @@ const Index = () => {
         }
     });
 
+    const handleConfirmation = async () => {
+        localStorage.setItem();
+    };
 
     console.log(data);
     
@@ -36,6 +39,7 @@ const Index = () => {
                 <div className={styles.product__info}>
                     <h2>{data.getProduct.title}</h2>
                     <p>{data.getProduct.price}€</p>
+                    <button className="btn btn-black" onClick={handleConfirmation}>Ajouter au panier</button>
                 </div>
             </div>
         </div>

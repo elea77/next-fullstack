@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from "./HeaderToolbar.module.scss";
 import {FaUser} from 'react-icons/fa';
 import {BsFillBasket2Fill} from 'react-icons/bs';
 import Link from 'next/link';
+import CartContext from '../../../context/CartContext';
 
 const HeaderToolbar = () => {
 
-    // console.log(localStorage.getItem("token"));
-
+    const { count } = useContext(CartContext);
 
     return (
         <nav className={styles.header__toolbar}>
@@ -32,7 +32,7 @@ const HeaderToolbar = () => {
                 </li>
                 <li>
                     <Link href="/cart">
-                        <a><BsFillBasket2Fill fontSize="22px" /></a>
+                        <a><BsFillBasket2Fill fontSize="22px" /> {count} </a>
                     </Link>
                 </li>
                 <li></li>
