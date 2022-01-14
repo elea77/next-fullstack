@@ -5,7 +5,7 @@ import styles from "./ProductCard.module.scss";
 
 const ProductCard = (props) => {
 
-  const { addItem } = useContext(CartContext);
+  const { addItem, removeItem } = useContext(CartContext);
   
   return (
     <div className={styles.product__card} key={props.product.id}>
@@ -17,6 +17,7 @@ const ProductCard = (props) => {
             </a>
         </Link>
         <button className="btn btn-black" onClick={()=>addItem(props.product)}>Ajouter au panier</button>
+        {/* <button className="btn btn-black" onClick={()=>removeItem(props.product)}>Retirer du panier</button> */}
     </div>
   );
 };

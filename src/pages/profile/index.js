@@ -20,9 +20,9 @@ const Index = () => {
     return (
         <div className='container'>
             <TitlePage title="Profil" className='text-center'></TitlePage>
-            FirstName: {user && user.firstName}
-            LastName: {user && user.lastName}
-            Email: {user && user.email}
+            <p>FirstName: {user && user.firstName}</p>
+            <p>LastName: {user && user.lastName}</p>
+            <p>Email: {user && user.email}</p>
         </div>
     );
 };

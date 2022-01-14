@@ -7,7 +7,7 @@ import CartContext from '../../../context/CartContext';
 
 const HeaderToolbar = () => {
 
-    const { count } = useContext(CartContext);
+    const { cart } = useContext(CartContext);
 
     return (
         <nav className={styles.header__toolbar}>
@@ -31,11 +31,10 @@ const HeaderToolbar = () => {
                     </ul>
                 </li>
                 <li>
-                    <Link href="/cart">
-                        <a><BsFillBasket2Fill fontSize="22px" /> {count} </a>
+                    <Link href="/checkout">
+                        <a><BsFillBasket2Fill fontSize="22px" /> <span className={styles.count__span}>{cart && cart.length}</span> </a>
                     </Link>
                 </li>
-                <li></li>
             </ul>
         </nav>
     );
