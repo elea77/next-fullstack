@@ -7,22 +7,25 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <div className={styles.footer__main}>
-            <div className='container'>
-                <div>
+        <div className='container'>
+            <div className={styles.footer__main}>
+                <div className={styles.footer__first}>
                     <h2>Informations</h2>
                     <Link href="/about">
                         <a>A propos de nous</a>
                     </Link>
                 </div>
-                <div>
+                <div className={styles.footer__second}>
                     <h2>Suivez nous</h2>
-                    <BsTwitter />
-                    <FaFacebookF />
-                    <GrInstagram />
-                </div>
-                <div>
-
+                    <Link href="">
+                        <a><BsTwitter fontSize="2em" /></a>
+                    </Link>
+                    <Link href="">
+                        <a><FaFacebookF fontSize="2em" /></a>
+                    </Link>
+                    <Link href="">
+                        <a><GrInstagram fontSize="2em" /></a>
+                    </Link>
                 </div>
             </div>
         </div>
