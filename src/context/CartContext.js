@@ -17,11 +17,30 @@ export const CartContextProvider = ({ children }) => {
     const count = cart && cart.length || 0;
 
     const addItem = (item) => {
-        if (cart && cart.length > 0) {
-            setCart([...cart, item]);            
+        
+        let productObject = {
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            qty: 1
         }
-        else if(!cart){
-            setCart([item]);            
+
+        // Si le panier est vide, on insère le nouvel objectif
+        if(!cart) {
+            setCart([productObject]);
+            
+        } else { // Si le panier est déjà remplit
+            let indexOfExistingProduct = cart.findIndex(
+                (el) => el.id === productObject.id
+            )
+
+            if(indexOfExistingProduct !== -1) {
+                cart[indexOfExistingProduct].qty += 1
+            } else {
+                setCart([...cart, productObject]);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
     }
 
