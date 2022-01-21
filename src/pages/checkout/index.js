@@ -13,6 +13,7 @@ const Index = () => {
   const { cart, addItem, removeItem, total, count, deleteLine, deleteCart} = useContext(CartContext);
 
   const handleConfirmation = async (body) => {
+    const token = localStorage.getItem('token');
     
     const payload = {
       total: total,
@@ -21,7 +22,7 @@ const Index = () => {
     }
     try {
       const stripe = await stripePromise;
-      const response = await stripeService.createSession(payload);
+      const response = await stripeService.createSession(token, payload);
       await stripe.redirectToCheckout({
         sessionId: response.id,
       });
