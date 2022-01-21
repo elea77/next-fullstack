@@ -6,11 +6,11 @@ import CartContext from "../../context/CartContext";
 import Alert from "../../components/UI/Alert/Alert";
 import styles from "./index.module.scss";
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK);
+const stripePromise = loadStripe("pk_test_51IYAwmJ5UFJGtqNY47wrtVEcNKKVkbiO0TzfR5kQ9Sfle8LjCPvQXzhuWH7PKoRaWQNP3oC2mVBhHPqkUn3n4BId00YcpQNq2k");
 
 const Index = () => {
 
-  const { cart, addItem, removeItem, total, count, deleteLine} = useContext(CartContext);
+  const { cart, addItem, removeItem, total, count, deleteLine, deleteCart} = useContext(CartContext);
 
   const handleConfirmation = async (body) => {
     
@@ -75,6 +75,9 @@ const Index = () => {
                   Total :
                 </th>
                 <td>{total} €</td>
+              </tr>
+              <tr>
+                <button className="btn btn-black" onClick={()=>{deleteCart()}}>Supprimer le panier</button>
               </tr>
             </tfoot>
           </table>
